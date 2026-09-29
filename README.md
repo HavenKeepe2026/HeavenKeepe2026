@@ -1,6 +1,8 @@
-# QMMemoria
+# HavenKeep
 
 ### An Integrated Management and GIS-Based Plot Reservation System for Queen Mary Haven of Peace Memorial Garden
+
+> **Formerly known as QMMemoria**
 
 ![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
 ![Project Type](https://img.shields.io/badge/Project-Capstone%20Project-blue)
@@ -9,15 +11,15 @@
 
 ---
 
-## 📌 Project Overview
+## 📌 About the Project
 
-**QMMemoria** is a web-based management and GIS-based plot reservation system developed for **Queen Mary Haven of Peace Memorial Garden**.
+**HavenKeep** is a web-based management and GIS-based plot reservation system developed for **Queen Mary Haven of Peace Memorial Garden**.
 
-The system is designed to help organize and manage memorial garden operations by providing a centralized platform for managing client information, burial plots, reservations, payments, and grave records.
+The system was formerly known as **QMMemoria** and was developed as a capstone project for the **Bachelor of Science in Information Technology** program at **Palawan State University – Quezon Campus**.
 
-The system integrates **Management Information System (MIS)** functions with **Geographic Information System (GIS)** features to provide a visual representation of burial plots and their corresponding locations.
+HavenKeep is designed to provide a centralized platform for managing memorial garden records, burial plots, reservations, client information, grave records, payments, and administrative activities.
 
-The project aims to improve record organization, plot monitoring, reservation management, and the overall management of memorial garden information.
+The system incorporates **Geographic Information System (GIS)** functionality to provide a visual representation of burial plots and their locations within the memorial garden.
 
 ---
 
@@ -29,96 +31,40 @@ To develop and implement an integrated management and GIS-based plot reservation
 
 ### Specific Objectives
 
-The project aims to:
+HavenKeep aims to:
 
 * Develop a centralized system for managing client information, plot records, and reservation transactions.
-* Implement a GIS-based interface for visualizing burial plots and their locations.
-* Provide accurate plot identification using block and plot numbers.
-* Support the management of plot reservations and client records.
+* Implement a GIS-based interface for the spatial representation of burial plots.
+* Provide accurate identification of plots using block and plot numbers.
+* Support the management of plot reservations.
+* Manage client and burial records.
 * Track payment information and remaining balances.
-* Support the management and tracking of grave records.
-* Provide role-based access for administrators and staff.
-* Generate reports related to plots, reservations, payments, and records.
-* Improve the organization and accessibility of memorial garden records.
+* Support grave and burial record management.
+* Implement role-based access for authorized users.
+* Generate reports related to plots, reservations, payments, and other records.
+* Improve the organization, accessibility, and management of memorial garden information.
 
 ---
 
-## 👥 User Roles
+## 🗺️ GIS-Based Plot Management
 
-### Administrator
+A major component of HavenKeep is its GIS-based plot management functionality.
 
-The Administrator is responsible for the overall management of the system.
+The system is designed to represent the actual location of burial plots within the memorial garden.
 
-Main functions include:
-
-* Manage staff accounts
-* Manage client accounts
-* Manage burial plots
-* Manage GIS plot information
-* Review reservation requests
-* Approve or reject reservations
-* Manage payment records
-* Manage grave records
-* Generate reports
-* Restore deleted records
-* Manage system settings
-* Access administrative records
-
-### Staff
-
-Staff assists with the daily operations of the memorial garden.
-
-Main functions include:
-
-* Create client accounts upon request
-* Record client information
-* Assist walk-in clients
-* Process reservation requests
-* Submit reservations for administrator approval
-* Record payments
-* Manage permitted grave information
-* View plot information
-* Assist clients with plot selection
-* Access applicable reports
-
-### Client
-
-Clients have limited access to the system.
-
-Client functions may include:
-
-* Access their verified account
-* View available plot information
-* View their reservation information
-* Submit plot reservation requests
-* View payment status
-* View remaining balance
-* View relevant plot information
-* Access frequently asked questions and client services
-
----
-
-## 🗺️ GIS Plot Management
-
-QMMemoria incorporates GIS functionality to visually represent the memorial garden's burial plots.
-
-The GIS component is intended to provide:
+GIS functionality includes:
 
 * Block identification
 * Plot identification
-* Plot coordinates
+* Geographic coordinates
 * Plot boundaries
 * Plot availability
 * Plot reservation status
 * Plot occupancy status
-* Visual plot location
 * Grave location tracking
+* Visual plot positioning
 
-The system is designed to use the actual coordinates and spatial boundaries of the memorial garden plots.
-
-### Plot Structure
-
-Example:
+### Example Plot Structure
 
 ```text
 Block 36
@@ -129,15 +75,72 @@ Block 36
 └── Plot 5
 ```
 
+Each plot may contain spatial information corresponding to its actual location within the memorial garden.
+
 Sensitive client and deceased-person information should not be publicly displayed directly on the GIS map.
 
 ---
 
-## 🔐 Authentication and Security
+## 👥 User Roles
 
-The system includes authentication and role-based access control.
+HavenKeep uses role-based access to separate administrative functions from staff and client-related functions.
 
-Planned security features include:
+### Administrator
+
+The Administrator manages the overall system and has access to authorized administrative functions such as:
+
+* Staff account management
+* Client account management
+* Plot management
+* GIS management
+* Reservation management
+* Reservation approval
+* Payment management
+* Grave record management
+* Report generation
+* Record restoration
+* System settings
+* Administrative records
+
+### Staff
+
+Staff assists with the day-to-day operations of the memorial garden.
+
+Staff functions include:
+
+* Creating client accounts upon request
+* Recording client information
+* Assisting walk-in clients
+* Processing reservation requests
+* Submitting reservations for administrator approval
+* Recording payments
+* Managing permitted grave information
+* Viewing plot information
+* Assisting clients with plot selection
+* Accessing applicable reports
+
+### Client
+
+Clients have limited access to the system and may access functions related to their own records and reservations.
+
+Possible client functions include:
+
+* Accessing a verified account
+* Viewing available plot information
+* Requesting a plot reservation
+* Viewing reservation information
+* Viewing payment status
+* Viewing remaining balance
+* Accessing client service information
+* Viewing frequently asked questions
+
+---
+
+## 🔐 Authentication and Account Security
+
+HavenKeep incorporates authentication and controlled account access.
+
+The revised system design includes:
 
 * Staff-controlled client account creation
 * Email verification
@@ -146,18 +149,58 @@ Planned security features include:
 * Role-based access
 * Reservation authentication
 * Terms and agreement confirmation
-* Controlled access to sensitive client information
-* Administrative approval for selected transactions
+* Controlled access to sensitive records
+* Administrative approval for applicable transactions
 
-Clients must have a verified email before proceeding with applicable reservation transactions.
+A client account may be created by authorized staff upon request.
+
+Email verification is required for applicable reservation transactions to help ensure that the registered email belongs to the client.
+
+---
+
+## 📋 Plot Reservation
+
+The plot reservation process is designed to connect the client's information with the selected plot.
+
+A general reservation process includes:
+
+```text
+Client Request
+      ↓
+Staff Assistance
+      ↓
+Client Account Creation
+      ↓
+Email Verification
+      ↓
+GIS Map
+      ↓
+Plot Selection
+      ↓
+Reservation Requirements
+      ↓
+Client Information
+      ↓
+Payment Information
+      ↓
+Terms & Agreement
+      ↓
+Reservation Request
+      ↓
+Administrator Review
+      ↓
+Approval / Rejection
+```
+
+The system is designed so that sensitive client information is handled separately from the publicly visible plot map.
 
 ---
 
 ## 💰 Payment Management
 
-The system supports the recording and monitoring of payment information.
+HavenKeep supports payment recording and monitoring.
 
-Payment methods may include:
+Payment options may include:
 
 * Cash
 * Installment
@@ -167,12 +210,12 @@ For installment arrangements, the system may record:
 * Total amount
 * Amount paid
 * Remaining balance
-* Payment dates
+* Payment date
 * Payment schedule
-* Expected completion/end date
+* Expected end date
 * Payment status
 
-Example:
+### Payment Status Example
 
 ```text
 Total Amount:       ₱50,000
@@ -187,29 +230,31 @@ Once the complete amount has been recorded:
 Payment Status: Fully Paid
 ```
 
+This allows authorized users to monitor the financial status associated with a reservation or plot record.
+
 ---
 
 ## 🪦 Grave and Burial Record Management
 
-The system supports the management of grave and burial information associated with designated plots.
+HavenKeep includes functionality for managing grave and burial information associated with designated plots.
 
-Possible information includes:
+Records may include:
 
-* Plot number
 * Block number
-* Deceased person's information
+* Plot number
+* Deceased information
 * Burial information
-* Client/account information
 * Burial date
+* Client/account information
 * Plot status
 
-Access to sensitive information is restricted according to user roles.
+Access to sensitive information is controlled through user roles.
 
 ---
 
 ## 📊 Reports
 
-QMMemoria provides reporting functionality for system records.
+The system provides reporting functionality for authorized users.
 
 Possible reports include:
 
@@ -228,19 +273,19 @@ Reports may be prepared for viewing and printing.
 
 ## 🗑️ Record Management
 
-Instead of immediately permanently deleting records, the system may use a **Trash/Archive** mechanism.
+HavenKeep is designed to support a trash/archive approach for deleted records instead of immediately permanently removing them.
 
-Example workflow:
+### Record Workflow
 
 ```text
 Active Record
-     ↓
+      ↓
 Delete / Hide
-     ↓
+      ↓
 Trash
-     ↓
+      ↓
 Restore
-     ↓
+      ↓
 Active Record
 ```
 
@@ -250,9 +295,9 @@ Authorized administrators may restore records when necessary.
 
 ## ❓ Frequently Asked Questions
 
-The system includes an FAQ/Client Services section intended to provide answers to common questions.
+The system includes a **Frequently Asked Questions (FAQ)** section intended to provide clients with information about common services and procedures.
 
-Possible topics include:
+Possible FAQ topics include:
 
 * Plot reservation
 * Reservation requirements
@@ -269,41 +314,39 @@ Possible topics include:
 
 ## 🏗️ System Architecture
 
-The project follows a web-based system architecture consisting of the user interface, application logic, database, and GIS components.
+HavenKeep follows a web-based system architecture consisting of the user interface, application logic, database, and GIS components.
 
 ```text
-                    ┌─────────────────────┐
-                    │       CLIENT        │
-                    └──────────┬──────────┘
-                               │
-                    ┌──────────▼──────────┐
-                    │     WEB SYSTEM      │
-                    └──────────┬──────────┘
-                               │
-             ┌─────────────────┼─────────────────┐
-             │                 │                 │
-      ┌──────▼──────┐   ┌──────▼──────┐   ┌──────▼──────┐
-      │   ADMIN     │   │    STAFF     │   │     GIS     │
-      │ MANAGEMENT  │   │ MANAGEMENT   │   │    MAP      │
-      └──────┬──────┘   └──────┬──────┘   └──────┬──────┘
-             │                 │                 │
-             └─────────────────┼─────────────────┘
-                               │
-                    ┌──────────▼──────────┐
-                    │      DATABASE       │
-                    │ Client / Plot /     │
-                    │ Reservation /       │
-                    │ Payment / Grave     │
-                    └─────────────────────┘
+                     ┌─────────────────────┐
+                     │       CLIENT        │
+                     └──────────┬──────────┘
+                                │
+                     ┌──────────▼──────────┐
+                     │     WEB SYSTEM      │
+                     └──────────┬──────────┘
+                                │
+              ┌─────────────────┼─────────────────┐
+              │                 │                 │
+       ┌──────▼──────┐   ┌──────▼──────┐   ┌──────▼──────┐
+       │   ADMIN     │   │    STAFF     │   │     GIS     │
+       │ MANAGEMENT  │   │ MANAGEMENT   │   │    MAP      │
+       └──────┬──────┘   └──────┬──────┘   └──────┬──────┘
+              │                 │                 │
+              └─────────────────┼─────────────────┘
+                                │
+                     ┌──────────▼──────────┐
+                     │      DATABASE       │
+                     │ Client / Plot /     │
+                     │ Reservation /       │
+                     │ Payment / Grave     │
+                     └─────────────────────┘
 ```
 
 ---
 
 ## 🛠️ Technologies
 
-The project uses web development technologies and database technologies appropriate for the system implementation.
-
-### Development
+### Web Development
 
 * PHP
 * Laravel
@@ -318,7 +361,7 @@ The project uses web development technologies and database technologies appropri
 
 ### GIS / Mapping
 
-* GIS-based plot mapping
+* GIS-based mapping
 * Geographic coordinates
 * Digital plot boundaries
 * Map visualization
@@ -336,8 +379,10 @@ The project uses web development technologies and database technologies appropri
 
 ## 📁 Repository Structure
 
+The repository may contain the following project components:
+
 ```text
-QMMemoria/
+HavenKeep/
 │
 ├── app/
 ├── bootstrap/
@@ -375,13 +420,13 @@ QMMemoria/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/qmmemoria.git
+git clone https://github.com/HavenKeepe2026/HavenKeep.git
 ```
 
 ### 2. Open the Project
 
 ```bash
-cd qmmemoria
+cd HavenKeep
 ```
 
 ### 3. Install PHP Dependencies
@@ -396,25 +441,21 @@ composer install
 npm install
 ```
 
-### 5. Create Environment File
+### 5. Create the Environment File
 
-```bash
-cp .env.example .env
-```
-
-For Windows:
+Windows:
 
 ```bash
 copy .env.example .env
 ```
 
-### 6. Generate Application Key
+### 6. Generate the Application Key
 
 ```bash
 php artisan key:generate
 ```
 
-### 7. Configure Database
+### 7. Configure the Database
 
 Create a MySQL database and configure the `.env` file.
 
@@ -424,7 +465,7 @@ Example:
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=qmmemoria
+DB_DATABASE=havenkeep
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -435,7 +476,7 @@ DB_PASSWORD=
 php artisan migrate
 ```
 
-If demo seed data is available:
+If seeders are available:
 
 ```bash
 php artisan db:seed
@@ -447,7 +488,7 @@ php artisan db:seed
 php artisan serve
 ```
 
-The system can then be accessed through:
+The application can then be accessed at:
 
 ```text
 http://127.0.0.1:8000
@@ -455,11 +496,13 @@ http://127.0.0.1:8000
 
 ---
 
-## 🔒 Security Notice
+## 🔒 Security and Privacy
 
-Do **not** upload the following to GitHub:
+The repository should **never contain confidential or sensitive information**.
 
-* `.env`
+Do not upload:
+
+* `.env` files
 * Database passwords
 * API keys
 * Email credentials
@@ -471,76 +514,90 @@ Do **not** upload the following to GitHub:
 
 Use `.env.example` for configuration examples.
 
-For demonstrations and development, use **sample or anonymized data**.
+For development, testing, and demonstration purposes, use sample or anonymized data.
 
 ---
 
 ## 📚 Capstone Documentation
 
-The repository may contain project documentation such as:
+The repository may contain documentation related to the development and evaluation of HavenKeep.
 
-```text
-documentation/
-├── Chapter I/
-├── Chapter II/
-├── Chapter III/
-├── Chapter IV/
-├── Chapter V/
-└── Chapter VI/
-```
+Possible documentation includes:
 
-Supporting documentation may include:
-
-* Project proposal
-* System requirements
+* Chapter I – Introduction
+* Chapter II – Review of Related Literature/Systems
+* Chapter III – Technical Background
+* Chapter IV – Methodology
+* Chapter V – Results and Discussion
+* Chapter VI – Conclusions and Recommendations
+* System Requirements
 * Use Case Diagram
 * User Stories
 * Data Flow Diagram
 * Entity Relationship Diagram
 * System Architecture
-* GIS documentation
-* Test results
-* User guide
-* Sample reports
+* GIS Documentation
+* Test Results
+* User Guide
+* Sample Reports
 * Screenshots
-* Relevant source code
+* Relevant Source Code
 
 ---
 
 ## 🎓 Academic Project
 
-This project is developed as a **Capstone Project** in partial fulfillment of the requirements for the degree of:
+**HavenKeep** is a capstone project developed in partial fulfillment of the requirements for the degree of:
 
 **Bachelor of Science in Information Technology**
 
 **Palawan State University – Quezon Campus**
 
-### Project
-
-**QMMemoria: An Integrated Management and GIS-Based Plot Reservation System for Queen Mary Haven of Peace Memorial Garden**
-
----
-
-## 👨‍💻 Developers
-
-**BS Information Technology Capstone Project**
-
-Palawan State University
-Quezon Campus
-Palawan, Philippines
+**Palawan, Philippines**
 
 ---
 
 ## 📌 Project Status
 
-**Currently in Development**
+**In Development**
 
-The system is undergoing major revisions based on adviser/panel feedback. Future updates will include improvements to authentication, client account management, GIS plot mapping, reservation workflows, payment tracking, grave tracking, reporting, and role-based system access.
+HavenKeep is undergoing major system revisions based on adviser and panel feedback.
+
+Current development areas include:
+
+* Authentication and email verification
+* Staff-controlled client accounts
+* Role-based access
+* GIS plot mapping
+* Plot coordinates and boundaries
+* Plot reservation workflow
+* Payment and balance tracking
+* Grave tracking
+* Administrative approval
+* Reports
+* Privacy controls
+* User interface improvements
+
+---
+
+## 🔄 Project History
+
+### QMMemoria → HavenKeep
+
+The system was originally developed under the name:
+
+**QMMemoria: An Integrated Management and GIS-Based Plot Reservation System for Queen Mary Haven of Peace Memorial Garden**
+
+The project was subsequently renamed:
+
+**HavenKeep**
+
+The core project purpose remains focused on the management, mapping, reservation, and tracking of memorial garden plots.
 
 ---
 
 ## 📄 License
 
-This project is developed for academic purposes.
+This project is developed for academic and educational purposes.
 
-Unauthorized commercial use, redistribution, or reproduction of the project and its associated confidential data is not permitted without permission from the project owners and the concerned institution.
+Unauthorized commercial use, redistribution, or reproduction of confidential project information is not permitted without authorization from the project owners and concerned institution.
